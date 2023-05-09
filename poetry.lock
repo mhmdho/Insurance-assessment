@@ -68,6 +68,17 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-rest-framework"
+version = "0.1.0"
+description = "alias."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+djangorestframework = "*"
+
+[[package]]
 name = "djangorestframework"
 version = "3.14.0"
 description = "Web APIs for Django, made easy."
@@ -236,35 +247,21 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "902da9b816ff167cafd97f587747235fc404bf9f390fb114a0f41f3c62994d5a"
+content-hash = "55857b9945e70d0373aa6df5a411795e8e312ef44173319d9637049e4828f7a0"
 
 [metadata.files]
 asgiref = []
-certifi = [
-    {file = "certifi-2023.5.7-py3-none-any.whl", hash = "sha256:c6c2e98f5c7869efca1f8916fed228dd91539f9f1b444c314c06eef02980c716"},
-    {file = "certifi-2023.5.7.tar.gz", hash = "sha256:0f0d56dc5a6ad56fd4ba36484d6cc34451e1c6548c61daad8c320169f91eddc7"},
-]
+certifi = []
 charset-normalizer = []
-coreapi = [
-    {file = "coreapi-2.3.3-py2.py3-none-any.whl", hash = "sha256:bf39d118d6d3e171f10df9ede5666f63ad80bba9a29a8ec17726a66cf52ee6f3"},
-    {file = "coreapi-2.3.3.tar.gz", hash = "sha256:46145fcc1f7017c076a2ef684969b641d18a2991051fddec9458ad3f78ffc1cb"},
-]
+coreapi = []
 coreschema = []
 django = []
-djangorestframework = [
-    {file = "djangorestframework-3.14.0-py3-none-any.whl", hash = "sha256:eb63f58c9f218e1a7d064d17a70751f528ed4e1d35547fdade9aaf4cd103fd08"},
-    {file = "djangorestframework-3.14.0.tar.gz", hash = "sha256:579a333e6256b09489cbe0a067e66abe55c6595d8926be6b99423786334350c8"},
-]
-drf-yasg = [
-    {file = "drf-yasg-1.21.5.tar.gz", hash = "sha256:ceef0c3b5dc4389781afd786e6dc3697af2a2fe0d8724ee1f637c23d75bbc5b2"},
-    {file = "drf_yasg-1.21.5-py3-none-any.whl", hash = "sha256:ba9cf4bf79f259290daee9b400fa4fcdb0e78d2f043fa5e9f6589c939fd06d05"},
-]
+django-rest-framework = []
+djangorestframework = []
+drf-yasg = []
 idna = []
 inflection = []
-itypes = [
-    {file = "itypes-1.2.0-py2.py3-none-any.whl", hash = "sha256:03da6872ca89d29aef62773672b2d408f490f80db48b23079a4b194c86dd04c6"},
-    {file = "itypes-1.2.0.tar.gz", hash = "sha256:af886f129dea4a2a1e3d36595a2d139589e4dd287f5cab0b40e799ee81570ff1"},
-]
+itypes = []
 jinja2 = []
 markupsafe = []
 packaging = [
@@ -272,17 +269,9 @@ packaging = [
     {file = "packaging-23.1.tar.gz", hash = "sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"},
 ]
 pytz = []
-requests = [
-    {file = "requests-2.30.0-py3-none-any.whl", hash = "sha256:10e94cc4f3121ee6da529d358cdaeaff2f1c409cd377dbc72b825852f2f7e294"},
-]
-"ruamel.yaml" = [
-    {file = "ruamel.yaml-0.17.24-py3-none-any.whl", hash = "sha256:f251bd9096207af604af69d6495c3c650a3338d0493d27b04bc55477d7a884ed"},
-    {file = "ruamel.yaml-0.17.24.tar.gz", hash = "sha256:90e398ee24524ebe20fc48cd1861cedd25520457b9a36cfb548613e57fde30a0"},
-]
+requests = []
+"ruamel.yaml" = []
 "ruamel.yaml.clib" = []
 sqlparse = []
-uritemplate = [
-    {file = "uritemplate-4.1.1-py2.py3-none-any.whl", hash = "sha256:830c08b8d99bdd312ea4ead05994a38e8936266f84b9a7878232db50b044e02e"},
-    {file = "uritemplate-4.1.1.tar.gz", hash = "sha256:4346edfc5c3b79f694bccd6d6099a322bbeb628dbf2cd86eea55a456ce5124f0"},
-]
+uritemplate = []
 urllib3 = []
