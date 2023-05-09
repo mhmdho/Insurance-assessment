@@ -16,11 +16,11 @@ class Shop(models.Model):
         (JEW, "Jewelry"),
     )
 
-    name = CharField(max_length=50)
+    name = models.CharField(max_length=50)
     type = models.CharField(max_length=17, choices=TYPE_CHOICES, default=ELE)
-    address = CharField(max_length=200)
+    address = models.CharField(max_length=200)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    is_confirmed = BooleanField(default=False)
+    is_confirmed = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
