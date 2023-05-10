@@ -26,3 +26,9 @@ class RegisterSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ('phone', 'first_name', 'last_name', 'email', 'date_joined', 'last_login')
