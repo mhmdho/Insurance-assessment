@@ -3,6 +3,7 @@ from rest_framework import generics
 from rest_framework.response import Response
 from user.models import CustomUser
 from .serializers import RegisterSerializer
+from rest_framework import status
 
 # Create your views here.
 
