@@ -14,4 +14,5 @@ python = "^3.8"
 drf-yasg = "1.21.5"
 django-rest-framework = "0.1.0"
 django-user = "^0.2.1"
+djangorestframework-simplejwt = "^5.2.2"
 [tool.poetry.dev-dependencies]
