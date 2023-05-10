@@ -2,13 +2,24 @@ from django.shortcuts import render
 from rest_framework import generics
 from rest_framework.response import Response
 from user.models import CustomUser
-from .serializers import RegisterSerializer, UserProfileSerializer
+from .serializers import RegisterSerializer, UserProfileSerializer, MyTokenObtainPairSerializer
 from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.parsers import FormParser, MultiPartParser
 from django.shortcuts import get_object_or_404
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 # Create your views here.
+
+
+class MyObtainTokenPairView(TokenObtainPairView):
+    """
+    Takes a set of user credentials and returns an access and refresh JSON web
+    token pair to prove the authentication of those credentials.
+    """
+    permission_classes = (AllowAny,)
+    serializer_class = MyTokenObtainPairSerializer
+    parser_classes = (MultiPartParser, FormParser)
 
 
 class RegisterView(generics.CreateAPIView):
