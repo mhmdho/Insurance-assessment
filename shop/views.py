@@ -9,7 +9,7 @@ from rest_framework.parsers import FormParser, MultiPartParser
 
 
 class ShopListView(generics.ListAPIView):
-  queryset = Shop.objects.filter(is_confirmed=True)
+  queryset = Shop.objects.all()
   permission_classes = (AllowAny,)
   serializer_class = ShopListSerializer
 
