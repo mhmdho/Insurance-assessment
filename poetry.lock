@@ -79,6 +79,14 @@ python-versions = "*"
 djangorestframework = "*"
 
 [[package]]
+name = "django-user"
+version = "0.2.1"
+description = "Django User"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "djangorestframework"
 version = "3.14.0"
 description = "Web APIs for Django, made easy."
@@ -247,7 +255,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "55857b9945e70d0373aa6df5a411795e8e312ef44173319d9637049e4828f7a0"
+content-hash = "ab62e67bb76107bf8c55f6a29e5b162338d1ae61c0baf42a43db48af2b64d2fb"
 
 [metadata.files]
 asgiref = []
@@ -257,6 +265,7 @@ coreapi = []
 coreschema = []
 django = []
 django-rest-framework = []
+django-user = []
 djangorestframework = []
 drf-yasg = []
 idna = []
@@ -264,10 +273,7 @@ inflection = []
 itypes = []
 jinja2 = []
 markupsafe = []
-packaging = [
-    {file = "packaging-23.1-py3-none-any.whl", hash = "sha256:994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61"},
-    {file = "packaging-23.1.tar.gz", hash = "sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f"},
-]
+packaging = []
 pytz = []
 requests = []
 "ruamel.yaml" = []

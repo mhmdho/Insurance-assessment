@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .serializers import ShopListSerializer
 from rest_framework import generics
+from .models import Shop
 
 # Create your views here.
 

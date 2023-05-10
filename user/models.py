@@ -15,5 +15,22 @@ class CustomUser(AbstractUser):
   phone = models.CharField(validators=[phone_regex], max_length=11, unique=True)
   last_login = models.DateTimeField(auto_now=True)
 
+  groups = models.ManyToManyField(
+      "auth.Group",
+      blank=True,
+      related_name="custom_user_groups",
+      help_text="The groups this user belongs to. A user will get all permissions granted to each of their groups.",
+      verbose_name="groups",
+  )
+  user_permissions = models.ManyToManyField(
+      "auth.Permission",
+      blank=True,
+      related_name="custom_user_permissions",
+      help_text="Specific permissions for this user.",
+      verbose_name="user permissions",
+  )
+  
+  USERNAME_FIELD = 'phone'
+
   def __str__(self):
       return self.phone
