@@ -6,3 +6,9 @@ class ShopListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Shop
         fields = ('name', 'type', 'address', 'user', 'is_confirmed')
+
+
+class ShopCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Shop
+        fields = ('name', 'type', 'address')
