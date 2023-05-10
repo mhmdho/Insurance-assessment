@@ -22,3 +22,12 @@ class CreateShopView(generics.CreateAPIView):
   def perform_create(self, serializer):
       serializer.validated_data['user'] = self.request.user
       serializer.save()
+
+
+class EditShopView(generics.RetrieveUpdateAPIView):
+  serializer_class = ShopCreateSerializer
+  queryset = Shop.objects.all()
+
+  def get_queryset(self):
+      queryset = super().get_queryset()
+      return queryset.filter(user=self.request.user, id=self.kwargs['pk'])
