@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .serializers import ShopListSerializer, ShopCreateSerializer, ProductListSerializer
+from .serializers import ShopListSerializer, ShopCreateSerializer, ProductListSerializer, ProductCreateSerializer
 from rest_framework import generics
 from .models import Shop, Product
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -43,3 +43,15 @@ class ProductListView(generics.ListAPIView):
   def get_queryset(self):
       queryset = super().get_queryset()
       return queryset.filter(shop__user=self.request.user, shop_id=self.kwargs['pk'])
+
+
+class CreateProductView(generics.CreateAPIView):
+  permission_classes = (IsAuthenticated,)
+  serializer_class = ProductCreateSerializer
+  parser_classes = (MultiPartParser, FormParser)
+
+  def perform_create(self, serializer):
+      shop = Shop.objects.filter(id=self.kwargs['pk'])[0]
+      if shop.user == self.request.user:
+        serializer.validated_data['shop'] = shop
+        serializer.save()
