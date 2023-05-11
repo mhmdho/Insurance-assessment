@@ -55,8 +55,7 @@ class Product(models.Model):
             while Product.objects.filter(slug = self.slug):
                 self.slug = slugify(self.name)
                 self.slug += self.random_number_generator()
-        if self.stock == 0:
-            self.is_active = False
+
         return super().save(*args, **kwargs)
 
     def __str__(self):
