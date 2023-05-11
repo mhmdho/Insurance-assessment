@@ -6,6 +6,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.pagination import PageNumberPagination
 
 # Create your views here.
 
@@ -41,6 +42,7 @@ class ProductListView(generics.ListAPIView):
   queryset = Product.objects.all()
   permission_classes = (IsAuthenticated,)
   serializer_class = ProductListSerializer
+  pagination_class = PageNumberPagination
 
   def get_queryset(self):
       queryset = super().get_queryset()
