@@ -1,5 +1,8 @@
 from django.db import models
 from user.models import CustomUser
+from django.core.validators import MinValueValidator
+from django.template.defaultfilters import slugify
+import random
 
 # Create your models here.
 
