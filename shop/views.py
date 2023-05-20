@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .serializers import ShopListSerializer, ShopCreateSerializer, ProductListSerializer, ProductCreateSerializer
 from rest_framework import generics
 from .models import Shop, Product
@@ -12,12 +11,19 @@ from rest_framework.pagination import PageNumberPagination
 
 
 class ShopListView(generics.ListAPIView):
+  """
+  Show all shops of all users.
+  No authentication needs to view this list.
+  """
   queryset = Shop.objects.all()
   permission_classes = (AllowAny,)
   serializer_class = ShopListSerializer
 
 
 class CreateShopView(generics.CreateAPIView):
+  """
+  Registered users can create numerous shops.
+  """
   permission_classes = (IsAuthenticated,)
   serializer_class = ShopCreateSerializer
   parser_classes = (MultiPartParser, FormParser)
@@ -28,6 +34,9 @@ class CreateShopView(generics.CreateAPIView):
 
 
 class EditShopView(generics.RetrieveUpdateAPIView):
+  """
+  Users can edit information of their own shops.
+  """
   permission_classes = (IsAuthenticated,)
   serializer_class = ShopCreateSerializer
   parser_classes = (MultiPartParser, FormParser)
@@ -39,6 +48,9 @@ class EditShopView(generics.RetrieveUpdateAPIView):
 
 
 class ProductListView(generics.ListAPIView):
+  """
+  Users can view list of products in their shop.
+  """
   queryset = Product.objects.all()
   permission_classes = (IsAuthenticated,)
   serializer_class = ProductListSerializer
@@ -50,6 +62,9 @@ class ProductListView(generics.ListAPIView):
 
 
 class CreateProductView(generics.CreateAPIView):
+  """
+  Users can create new product in their shop.
+  """
   permission_classes = (IsAuthenticated,)
   serializer_class = ProductCreateSerializer
   parser_classes = (MultiPartParser, FormParser)
@@ -67,6 +82,9 @@ class CreateProductView(generics.CreateAPIView):
 
 
 class EditProductView(generics.RetrieveUpdateAPIView):
+  """
+  Users can edit products of thier shop.
+  """
   lookup_field = 'slug'
   permission_classes = (IsAuthenticated,)
   serializer_class = ProductCreateSerializer
